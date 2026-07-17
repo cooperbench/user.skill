@@ -1,0 +1,120 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misprediction & Homogeneity Study</title>
+<style>
+ body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 1060px;
+        margin: 2rem auto; padding: 0 1rem; color: #1a1a2e; line-height: 1.55; }
+ h1 { border-bottom: 3px solid #7c3aed; padding-bottom: .4rem; }
+ h2 { margin-top: 2.4rem; color: #4c1d95; border-bottom: 1px solid #e3d9f7; padding-bottom: .2rem; }
+ h3 { margin-top: 1.6rem; color: #4c1d95; }
+ table { border-collapse: collapse; width: 100%; margin: .7rem 0 1.2rem; font-size: .87rem; }
+ th, td { text-align: left; padding: .38rem .55rem; border-bottom: 1px solid #e3e6ef; vertical-align: top; }
+ th { background: #f7f3ff; }
+ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+ .note { background: #f5f0ff; border-left: 4px solid #7c3aed; padding: .6rem 1rem; border-radius: 4px; }
+ .warn { background: #fff7ed; border-left: 4px solid #f0883e; padding: .6rem 1rem; border-radius: 4px; margin:1rem 0; }
+ .twin { display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0; }
+ .stat { flex:1 1 180px; background:#f0f4ff; border-radius:10px; padding:.9rem 1.1rem; }
+ .stat .bn { font-size:1.7rem; font-weight:800; color:#4361ee; }
+ .stat.up .bn { color:#16a34a; } .stat .bl { font-size:.8rem; color:#555; }
+ .legend { font-size:.78rem; color:#666; margin:.2rem 0; }
+ .mv { display:inline-block; font-size:.66rem; text-transform:uppercase; border-radius:3px; padding:0 5px; margin-bottom:3px; font-weight:700; }
+ table.sess td { font-size:.82rem; }
+ table.sess td.ag { background:#f6f6fb; color:#666; font-size:.76rem; width:10%; }
+ table.sess td.ur { width:45%; background:#fbf7ff; border-left:3px solid #7c3aed; }
+ table.sess td.us { width:45%; background:#f0f9ff; border-left:3px solid #0ea5e9; }
+ code { background:#f2eefc; padding:0 .3rem; border-radius:3px; font-size:.85em; }
+ .hy { font-weight:600; color:#4c1d95; }
+</style></head><body>
+
+<h1>Are the simulator's mispredictions <em>homogeneity</em>?</h1>
+<p><b>Hypothesis.</b> LLMs are trained to complete tasks, not to imitate humans, so they are
+systematically homogeneous — defaulting to task-driving behaviour instead of deciding from an
+individual developer's differences. If true, a user-simulator's errors should cluster on the
+human, individual moves (pushing back, interrupting, asking, redirecting) and regress everyone
+toward one "average developer".</p>
+
+<p class="legend">Generated from <code>misprediction_report.json</code> · sources: folder_v5samp_9users.json (162 labelled, folder) ·
+162 move-labelled prediction points.</p>
+<div class="warn"><b>Smoke run — underpowered.</b> These numbers are from a 7-user cohort (162 labelled points), enough to exercise the pipeline but not to conclude. The powered result needs the ~57-user validation run (prepped on branch <code>kevin</code>). Read the E1 adjudication and E5 verdict as indicative; treat E3/E4 permutation/Wilcoxon p-values as not-yet-significant.</div>
+
+<div class="twin"><div class="stat up"><div class="bn">75%</div><div class="bl">of worst misses are task-completion / generic substitution (homogeneity share, n=20)</div></div><div class="stat"><div class="bn">45%</div><div class="bl">of the worst misses are plausible-for-someone (reasonable rate)</div></div><div class="stat"><div class="bn">0.27 vs 0.33</div><div class="bl">between-user spread: predicted (generic) vs real move-mix</div></div><div class="stat"><div class="bn" style="font-size:1.2rem">surface_only</div><div class="bl">E5 verdict: does the folder move the decision or only the surface?</div></div></div>
+
+<h2>Method</h2>
+<p>Each held-out point has the real next message plus a simulated one under three conditions —
+<b>distilled</b> (the user's own folder), <b>generic</b> (no folder / pure task prior), and
+<b>wrong</b> (a different user's folder). Every message is labelled with a conversational
+<b>move</b>, folded to four categories: <span class="mv" style="background:#16a34a22;color:#16a34a">approve</span> accept/permit · <span class="mv" style="background:#dc262622;color:#dc2626">critical</span>
+assert something is wrong · <span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span> tell the agent what to do next · <span class="mv" style="background:#0ea5e922;color:#0ea5e9">inquiry</span>
+ask for an answer. The hypothesis becomes three falsifiable claims:</p>
+<ul>
+<li><span class="hy">H1 — central attractor (secondary).</span> Predictions over-produce
+approve/directive and under-produce critical/inquiry. <em>Prompt-sensitive:</em> our simulator is
+told "do NOT default to approving", so on the product simulator this is descriptive, not a clean test.</li>
+<li><span class="hy">H2 — between-user variance collapse (primary).</span> Predicted per-user
+move-mixes are more alike than real ones — the model doesn't spread across individuals.</li>
+<li><span class="hy">H3 — regression to the median developer (primary).</span> Each user's
+predicted mix sits closer to the population average than their real mix does.</li>
+</ul>
+
+<h2>E1 — worst-K misprediction audit</h2>
+<p>The worst mispredictions (move mismatch × low realism), each LLM-adjudicated for whether the
+prediction was <em>reasonable-for-someone</em> and what kind of error it is. The homogeneity
+signature is a high share of <b>task-completion substitution</b> (predicted keep-going where the
+real developer did something individual) and <b>generic-not-specific</b>.</p>
+<table><tr><th>error type</th><th class="num">count</th></tr><tr><td>task_completion_substitution</td><td class="num">14</td></tr><tr><td>hallucinated_content</td><td class="num">5</td></tr><tr><td>generic_not_specific</td><td class="num">1</td></tr></table><p class="legend">high reasonable_rate + high homogeneity_share = misses are &#x27;plausible in general, wrong for this person&#x27; (supports the hypothesis)</p>
+<table class="sess"><tr><th>user</th><th>REAL developer message</th><th>SIMULATED prediction</th></tr>
+<tr><td class="ag">pavel401<br><span class="legend">R12</span></td><td class="ur"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>Can we improve the Ui for this http://localhost:3000/query</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>ok apply the fixes<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=True</div></td></tr><tr><td class="ag">jeevanpillay<br><span class="legend">R15</span></td><td class="ur"><span class="mv" style="background:#0ea5e922;color:#0ea5e9">inquiry</span><br>whats last phase?</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>proceed to phase 5<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=True</div></td></tr><tr><td class="ag">marcus-sa<br><span class="legend">R8</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>marcus@Marcuss-MacBook-Pro san-francisco-v2 % dc down -v
+[+] Running 4/4
+ ✔ Container osabio-surrealdb-init         Removed               0.0s
+ ✔ Container osabio-surrealdb              Removed               0.2s
+ ✔ Volu</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>commit and push<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=True</div></td></tr><tr><td class="ag">marcus-sa<br><span class="legend">R10</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>we&#x27;ve had so many fucking issues with these telemetry init tests. they worked previously??? what is causing them to fail now??</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>commit and push<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">pavel401<br><span class="legend">R8</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>Areh madarchod , you deleted all my changes ? any way to restore them ? I was working on this files and was not commited the changes , you just reset it .</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>now add CLAUDE.md to gitignore<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">dipree<br><span class="legend">R15</span></td><td class="ur"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>Create a branch, commit the changes and create a PR describing the changes.</td><td class="us"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>I only asked to hide merged, not closed<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=True</div></td></tr><tr><td class="ag">marcus-sa<br><span class="legend">R18</span></td><td class="ur"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>yes, fix all the migration files</td><td class="us"><span class="mv" style="background:#0ea5e922;color:#0ea5e9">inquiry</span><br>so `DEFINE ... OVERWRITE` is meant to be used in migrations but the base schema (`surreal-schema.surql`) doesnt use it and it ran fine on import — so why did our migrations ever work before if surrealdb already applied t<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=True</div></td></tr><tr><td class="ag">marcus-sa<br><span class="legend">R20</span></td><td class="ur"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>add explanation in comment</td><td class="us"><span class="mv" style="background:#0ea5e922;color:#0ea5e9">inquiry</span><br>still failing in CI after disabling them? or the disable didnt even get pushed<div class="legend">verdict: <b>hallucinated_content</b> · reasonable=False</div></td></tr><tr><td class="ag">melagiri<br><span class="legend">R20</span></td><td class="ur"><span class="mv" style="background:#66622;color:#666">—</span><br>&lt;teammate-message teammate_id=&quot;pm-agent&quot; color=&quot;blue&quot;&gt;
+{&quot;type&quot;:&quot;idle_notification&quot;,&quot;from&quot;:&quot;pm-agent&quot;,&quot;timestamp&quot;:&quot;2026-03-10T00:29:20.726Z&quot;,&quot;idleReason&quot;:&quot;available&quot;,&quot;summary&quot;:&quot;[to pm-agent] Task #2 already done, issue #1</td><td class="us"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>where is TA? PM should have requested TA before spawning dev. we are skipping the ceremony<div class="legend">verdict: <b>hallucinated_content</b> · reasonable=False</div></td></tr><tr><td class="ag">jeevanpillay<br><span class="legend">R25</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>nope not seeing it. do you understand the outcomes i want? use AskUserQuestions tool</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>nice. build/check/typechcek<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr><tr><td class="ag">roo-oliv<br><span class="legend">R25</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>## 1. Whitespace-Only Line Detection — `mcp-server/review-tool.mjs` Add a `markWhitespaceOnlyChanges(hunks)` function, called at the end of `parseDiffContent()` (line 69, before `return hunks`). **Algorithm:** Walk each </td><td class="us"><span class="mv" style="background:#7c3aed22;color:#7c3aed">directive</span><br>I have enough context. Let me now produce roo-oliv&#x27;s bug report message, grounded in the just-implemented settings cog feature — specifically something plausible that roo-oliv would notice when running the review UI: the<div class="legend">verdict: <b>hallucinated_content</b> · reasonable=True</div></td></tr><tr><td class="ag">dipree<br><span class="legend">R25</span></td><td class="ur"><span class="mv" style="background:#dc262622;color:#dc2626">critical</span><br>Check the PR review comments for validity and address if true.</td><td class="us"><span class="mv" style="background:#16a34a22;color:#16a34a">approve</span><br>good, commit and push<div class="legend">verdict: <b>task_completion_substitution</b> · reasonable=False</div></td></tr>
+</table>
+
+<h2>E2 — marginal skew &amp; move confusion <span class="legend">(H1, descriptive)</span></h2>
+<p>Predicted-minus-real share per category, and net flow between human and task moves.
+direction is prompt-sensitive; clean approve-collapse test is E7 low-prompt arm</p>
+<table><tr><th>condition</th><th class="num">approve</th><th class="num">critical</th><th class="num">directive</th><th class="num">inquiry</th>
+<th class="num">human→task / task→human</th><th class="num">sign p</th></tr>
+<tr><td>distilled</td><td class="num"><span style="color:#7c3aed">+0.088</span></td><td class="num"><span style="color:#7c3aed">+0.067</span></td><td class="num"><span style="color:#7c3aed">-0.210</span></td><td class="num"><span style="color:#7c3aed">+0.055</span></td><td class="num">9→ / ←15</td><td class="num">0.307</td></tr><tr><td>generic</td><td class="num"><span style="color:#7c3aed">-0.060</span></td><td class="num"><span style="color:#7c3aed">+0.142</span></td><td class="num"><span style="color:#7c3aed">-0.266</span></td><td class="num"><span style="color:#7c3aed">+0.184</span></td><td class="num">5→ / ←22</td><td class="num">0.002</td></tr><tr><td>wrong</td><td class="num"><span style="color:#7c3aed">-0.042</span></td><td class="num"><span style="color:#7c3aed">+0.067</span></td><td class="num"><span style="color:#7c3aed">-0.080</span></td><td class="num"><span style="color:#7c3aed">+0.055</span></td><td class="num">10→ / ←16</td><td class="num">0.327</td></tr></table>
+
+<h2>E3 — between-user variance collapse <span class="legend">(H2, primary)</span></h2>
+<p>Mean pairwise total-variation distance between users' move-mixes. Hypothesis: predicted spread
+&lt; real spread (predictions cluster). Paired permutation test.</p>
+<table><tr><th>condition</th><th class="num">users</th><th class="num">spread real</th>
+<th class="num">spread pred</th><th class="num">Δ (pred−real)</th><th class="num">perm p</th><th>collapse?</th></tr>
+<tr><td>distilled</td><td class="num">7</td><td class="num">0.327</td><td class="num">0.501</td><td class="num"><span style="color:#991b1b">+0.174</span></td><td class="num">0.285</td><td>—</td></tr><tr><td>generic</td><td class="num">7</td><td class="num">0.327</td><td class="num">0.273</td><td class="num"><span style="color:#16a34a">-0.054</span></td><td class="num">0.750</td><td>collapse ✓</td></tr><tr><td>wrong</td><td class="num">7</td><td class="num">0.327</td><td class="num">0.370</td><td class="num"><span style="color:#991b1b">+0.043</span></td><td class="num">0.750</td><td>—</td></tr></table>
+
+<h2>E4 — regression to the median developer <span class="legend">(H3, primary)</span></h2>
+<p>Distance from each user's mix to the population-average mix, real vs predicted. Hypothesis:
+predicted is closer to the median (shrinkage). Wilcoxon signed-rank.</p>
+<table><tr><th>condition</th><th class="num">users</th><th class="num">dist→median real</th>
+<th class="num">dist→median pred</th><th class="num">Δ (pred−real)</th><th class="num">wilcoxon p</th><th>shrinks?</th></tr>
+<tr><td>distilled</td><td class="num">7</td><td class="num">0.218</td><td class="num">0.378</td><td class="num"><span style="color:#991b1b">+0.160</span></td><td class="num">0.128</td><td>—</td></tr><tr><td>generic</td><td class="num">7</td><td class="num">0.218</td><td class="num">0.325</td><td class="num"><span style="color:#991b1b">+0.106</span></td><td class="num">0.173</td><td>—</td></tr><tr><td>wrong</td><td class="num">7</td><td class="num">0.218</td><td class="num">0.248</td><td class="num"><span style="color:#991b1b">+0.029</span></td><td class="num">0.612</td><td>—</td></tr></table>
+
+<h2>E5 — decision vs. surface</h2>
+<p>Does the distilled folder change the <em>decision</em> (move-mix distance to the real user) or
+only the <em>surface</em> (judge style)? <b>surface_only</b> —
+surface_only = folder changes style but not move choice (supports homogeneity); decision_shift = folder moves the actual decision toward the user</p>
+<table><tr><th>condition</th><th class="num">users</th><th class="num">move dist→real</th>
+<th class="num">judge style</th><th class="num">judge realism</th><th class="num">judge content</th></tr>
+<tr><td>distilled</td><td class="num">7</td><td class="num">0.418</td><td class="num">34.8</td><td class="num">38.8</td><td class="num">25.4</td></tr><tr><td>generic</td><td class="num">7</td><td class="num">0.368</td><td class="num">26.4</td><td class="num">39.3</td><td class="num">22.1</td></tr><tr><td>wrong</td><td class="num">7</td><td class="num">0.344</td><td class="num">23.4</td><td class="num">30.4</td><td class="num">21.8</td></tr></table>
+
+<h2>Experiment catalog &amp; next steps</h2>
+<p>E1–E5 above run offline over the validation records. Two more, needing new generation, remain:</p>
+<ul>
+<li><b>E6 — underdetermination control.</b> Resample the generic simulator k× per point; drop
+high-entropy (unpredictable) points and re-run E2–E5. The distribution-level claims (H2/H3) should
+survive on the determined subset — that separates homogeneity from a low prediction ceiling.</li>
+<li><b>E7 — causal probe.</b> Compare the simulator under (i) default, (ii) an explicit "imitate
+THIS human, do not optimise the task" instruction, and (iii) move-conditioned sampling from the
+user's real prior (<code>validate.py --move-conditioned --move-source sample</code>). If (ii)/(iii)
+restore critical% and between-user variance, the homogeneity is an objective/prompt artifact, not a
+capability ceiling — the strongest test of the mechanism in the hypothesis.</li>
+</ul>
+<div class="note">Reproduce: <code>python3 scripts/misprediction.py --adjudicate</code> then
+<code>python3 scripts/misprediction_report_html.py</code>. Point <code>--results</code> at the
+~57-user <code>validation_results*.json</code> for the powered result.</div>
+
+</body></html>
